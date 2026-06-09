@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kilnkeep mockup - Admin: Sales</title>
+<style>
+:root{
+  --color-background-primary:#ffffff;
+  --color-background-secondary:#F1ECE2;
+  --color-background-tertiary:#E6DED1;
+  --color-background-info:#F6E9D2;
+  --color-background-success:#E9F0DD;
+  --color-text-primary:#2B2622;
+  --color-text-secondary:#6B655C;
+  --color-text-tertiary:#9A9388;
+  --color-text-info:#8A5A2B;
+  --color-text-success:#4A5D23;
+  --color-border-tertiary:rgba(0,0,0,0.12);
+  --color-border-secondary:rgba(0,0,0,0.22);
+  --color-border-info:#C98A3C;
+  --border-radius-md:8px;
+  --border-radius-lg:12px;
+  --border-radius-xl:16px;
+  --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;font-display:block;src:url("data:font/woff2;base64,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") format("woff2");}
+*{box-sizing:border-box;}
+body{margin:0;padding:24px;background:#E6DED1;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#2B2622;display:flex;flex-direction:column;align-items:center;}
+.stage{width:100%;max-width:760px;}
+.screen-label{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#9A9388;margin-bottom:10px;}
+button{font-family:inherit;font-size:14px;line-height:1;padding:9px 12px;border:0.5px solid rgba(0,0,0,0.22);border-radius:8px;background:#ffffff;color:#2B2622;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+input,select,textarea{font-family:inherit;font-size:14px;padding:9px 10px;border:0.5px solid rgba(0,0,0,0.12);border-radius:8px;background:#ffffff;color:#2B2622;outline:none;}
+textarea{resize:vertical;}
+.ti{font-family:"tabler-icons";font-weight:400;font-style:normal;display:inline-block;line-height:1;speak:none;-webkit-font-smoothing:antialiased;}
+.ti-settings:before{content:"\eb20"}
+.ti-plus:before{content:"\eb0b"}
+.ti-wand:before{content:"\ebcb"}
+.ti-photo:before{content:"\eb0a"}
+.ti-arrow-left:before{content:"\ea19"}
+.ti-search:before{content:"\eb1c"}
+.ti-check:before{content:"\ea5e"}
+.ti-edit:before{content:"\ea98"}
+.ti-camera:before{content:"\ea54"}
+.ti-currency-dollar:before{content:"\eb84"}
+.ti-receipt:before{content:"\edfd"}
+.ti-download:before{content:"\ea96"}
+.ti-coffee:before{content:"\ef0e"}
+.ti-lock:before{content:"\eae2"}
+.ti-info-circle:before{content:"\eac5"}
+.ti-chevron-right:before{content:"\ea61"}
+.ti-x:before{content:"\eb55"}
+.ti-star:before{content:"\eb2e"}
+.ti-user:before{content:"\eb4d"}
+.ti-user-plus:before{content:"\eb4b"}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="screen-label">Admin: Sales (owner only)</div>
+<div style="background:#F1ECE2;border-radius:12px;padding:1.5rem;display:flex;justify-content:center;">
+  <div style="width:340px;background:#FBF9F4;border:0.5px solid rgba(0,0,0,0.12);border-radius:16px;padding:16px;">
+    <div style="font-size:16px;font-weight:500;margin-bottom:12px;">Sales</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+      <div style="background:#E9F0DD;border-radius:8px;padding:12px;"><div style="font-size:11px;color:#4A5D23;">Total revenue</div><div style="font-size:20px;font-weight:500;color:#4A5D23;">$389</div></div>
+      <div style="background:#F1ECE2;border-radius:8px;padding:12px;"><div style="font-size:11px;color:#6B655C;">Unlocks</div><div style="font-size:20px;font-weight:500;">41</div></div>
+      <div style="background:#F1ECE2;border-radius:8px;padding:12px;"><div style="font-size:11px;color:#6B655C;">Top-ups</div><div style="font-size:20px;font-weight:500;">18</div></div>
+      <div style="background:#F6E9D2;border-radius:8px;padding:12px;"><div style="font-size:11px;color:#8A5A2B;">Tips</div><div style="font-size:20px;font-weight:500;color:#8A5A2B;">$36</div></div>
+    </div>
+    <div style="font-size:11px;color:#6B655C;margin-bottom:6px;">RECENT PAYMENTS</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:8px 0;border-top:0.5px solid rgba(0,0,0,0.12);"><span><i class="ti ti-lock" style="color:#9A9388;" aria-hidden="true"></i> Mar 14 - jess - Unlock</span><span>$9.99</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:8px 0;border-top:0.5px solid rgba(0,0,0,0.12);"><span><i class="ti ti-wand" style="color:#9A9388;" aria-hidden="true"></i> Mar 13 - amir - Top-up</span><span>$1.99</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:8px 0;border-top:0.5px solid rgba(0,0,0,0.12);"><span><i class="ti ti-coffee" style="color:#9A9388;" aria-hidden="true"></i> Mar 12 - lin - Tip</span><span>$5.00</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:8px 0;border-top:0.5px solid rgba(0,0,0,0.12);"><span><i class="ti ti-receipt" style="color:#9A9388;" aria-hidden="true"></i> Mar 11 - sam - Unlock</span><span>$9.99</span></div>
+  </div>
+</div>
+</div>
+</body>
+</html>

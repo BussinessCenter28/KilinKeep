@@ -1,0 +1,27 @@
+# Supabase CLI config for Kilnkeep.
+# Set project_id to your linked project ref (a grown-up creates the project).
+# Local dev: `supabase start` then `supabase db reset` applies migrations/ in order.
+# Remote:    `supabase link --project-ref <ref>` then `supabase db push`.
+
+project_id = "kilnkeep"
+
+[db]
+# Must match the remote major version (Supabase is currently on 15).
+major_version = 15
+
+[auth]
+# Email + password only (see docs/security.md: only email + password collected).
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+# Require email confirmation before first sign-in (recommended for production).
+enable_confirmations = true
+
+[storage]
+enabled = true
+
+# Edge Functions are built LAST (all secret-key features). Their config — notably
+# stripe-webhook requiring verify_jwt = false — is added in Phase 3, e.g.:
+# [functions.stripe-webhook]
+# verify_jwt = false
