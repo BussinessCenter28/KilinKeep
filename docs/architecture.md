@@ -182,7 +182,12 @@ All functions: validate inputs, `try/catch`, return `{ error: { code, message } 
 (no raw DB errors), never log keys or PII.
 
 **PAUSE points:** `glaze-suggest` (Anthropic key), all Stripe functions (Stripe keys),
-admin functions (`OWNER_USER_ID`). Built only after a grown-up adds keys.
+admin functions (`OWNER_USER_ID`). **Status (Phase 3): all six functions are now
+implemented** under `supabase/functions/` and atomic billing RPCs in migration
+`0010`. Each is **key-gated** — it returns a clean `503 not_configured` until a
+grown-up provisions its secret, so they deploy safely now. `glaze-suggest` uses the
+low-cost `claude-haiku-4-5` model with structured JSON output. Frontend wiring of
+the assistant/billing/admin pages to these functions is the remaining step.
 
 **Build order (decided & confirmed): every secret-key feature is LAST.** That means the
 **paid flows (all Stripe) and ALL API keys** — `glaze-suggest` (Anthropic), `create-checkout`

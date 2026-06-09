@@ -21,7 +21,12 @@ enable_confirmations = true
 [storage]
 enabled = true
 
-# Edge Functions are built LAST (all secret-key features). Their config — notably
-# stripe-webhook requiring verify_jwt = false — is added in Phase 3, e.g.:
-# [functions.stripe-webhook]
-# verify_jwt = false
+# --- Edge Functions ---
+# Most functions require a signed-in caller, so verify_jwt stays ON (default).
+# The Stripe webhook has NO user JWT — its authenticity is the Stripe signature —
+# so it MUST disable JWT verification or every delivery 401s.
+[functions.stripe-webhook]
+verify_jwt = false
+
+# glaze-suggest, create-checkout, and the admin-* functions keep verify_jwt = true
+# (default) and additionally re-verify the caller (and owner) inside the handler.
